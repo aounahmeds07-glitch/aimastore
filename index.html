@@ -1,0 +1,2915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="robots" content="index, follow" />
+
+    <title>Aima's Digital Store | Premium Digital Products</title>
+    <link rel="icon" type="image/svg+xml" href="https://unpkg.com/lucide-static/icons/shopping-bag.svg" />
+    <meta name="description" content="Aima's Digital Store offers premium digital products – templates, planners, bundles, UI kits, and more." />
+
+    <!-- ─── OPEN GRAPH ─── -->
+    <meta property="og:title" content="Aima's Digital Store – Premium Digital Products" />
+    <meta property="og:description" content="Explore our curated collection of digital tools, templates, and resources." />
+    <meta property="og:image" content="https://www.aimasdigitalstore.com/images/og-image.jpg" />
+    <meta property="og:url" content="https://www.aimasdigitalstore.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- ─── TWITTER ─── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aima's Digital Store – Premium Digital Products" />
+    <meta name="twitter:description" content="Premium digital tools, templates, and resources for professionals and creatives." />
+    <meta name="twitter:image" content="https://www.aimasdigitalstore.com/images/og-image.jpg" />
+
+    <!-- ─── FONTS ─── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ═══════════════════════════════════════════════
+           RESET & BASE
+           ═══════════════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-red: #E50914;
+            --brand-red-dark: #B2070F;
+            --shade-grey: #1A1A1A;
+            --shade-black: #0D0D0D;
+            --surface: #222222;
+            --border-color: #333333;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B3B3B3;
+            --text-muted: #808080;
+            --success: #2ECC71;
+            --warning: #F39C12;
+            --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.7);
+            --shadow-red: 0 4px 12px rgba(229, 9, 20, 0.35);
+            --shadow-red-hover: 0 4px 16px rgba(229, 9, 20, 0.5);
+            --radius-card: 10px;
+            --radius-section: 14px;
+            --radius-btn: 28px;
+            --font-family: 'Inter', sans-serif;
+            --transition: 0.3s ease;
+            --max-width: 1200px;
+            --max-width-hero: 1300px;
+            --header-height-mobile: 56px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: var(--font-family);
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            overflow-x: hidden;
+            min-height: 100vh;
+            font-family: var(--font-family);
+            background: var(--shade-black);
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--brand-red);
+            outline-offset: 2px;
+        }
+
+        /* ─── HEADER ─── */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0 12px;
+            z-index: 9999;
+            transition: top 0.3s ease, padding 0.3s ease;
+        }
+
+        @media (min-width: 769px) {
+            header {
+                top: 14px;
+                padding: 0 12px;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width-hero);
+            margin: auto;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            padding: 10px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-section);
+            box-shadow: var(--shadow-soft);
+            transition: border-radius 0.3s ease, padding 0.3s ease;
+            min-height: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 0 0 14px 14px;
+                padding: 10px 14px;
+                min-height: var(--header-height-mobile);
+            }
+            header {
+                padding: 0;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                border-radius: 0 0 10px 10px;
+                padding: 8px 10px;
+                min-height: 44px;
+            }
+        }
+
+        .logo {
+            color: var(--text-primary);
+            font-size: 20px;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: 2.5px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 400px) {
+            .logo {
+                font-size: 17px;
+                letter-spacing: 1.5px;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            position: relative;
+            transition: color var(--transition);
+            white-space: nowrap;
+        }
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 1.5px;
+            background: var(--brand-red);
+            transition: 0.35s;
+        }
+        nav a:hover {
+            color: var(--text-primary);
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .cta {
+            justify-self: end;
+            text-decoration: none;
+            background: var(--brand-red);
+            color: var(--text-primary);
+            padding: 8px 18px;
+            border-radius: 32px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .hamburger {
+            display: none;
+            width: 26px;
+            height: 20px;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            background: none;
+            border: none;
+            padding: 0;
+            flex-shrink: 0;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        .hamburger span {
+            height: 2.5px;
+            width: 100%;
+            background: var(--text-primary);
+            border-radius: 16px;
+            transition: 0.35s;
+            pointer-events: none;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════
+           HOME SECTION
+           ═══════════════════════════════════════════════ */
+        .home {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            min-height: 100vh;
+            min-height: 100svh;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            background: #353A3D;
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .home {
+                min-height: 100vh;
+                min-height: 100svh;
+                padding-top: 0;
+            }
+        }
+
+        .home-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+            max-width: var(--max-width-hero);
+            width: 100%;
+            padding: 0 6%;
+            margin: 0 auto;
+            align-self: center;
+            position: relative;
+            z-index: 1;
+            padding-top: 70px;
+        }
+
+        @media (max-width: 768px) {
+            .home-content {
+                padding-top: calc(var(--header-height-mobile) + 20px);
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .home-content {
+                padding-top: calc(44px + 16px);
+                gap: 14px;
+                padding-left: 4%;
+                padding-right: 4%;
+            }
+        }
+
+        .home-text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .home-text {
+                align-items: center;
+                gap: 12px;
+            }
+        }
+
+        .home-text h1 {
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.05;
+            color: var(--text-primary);
+            font-size: clamp(36px, 4.5vw, 64px);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .home-text h1 {
+                font-size: clamp(28px, 7vw, 48px);
+                letter-spacing: -1px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .home-text h1 {
+                font-size: clamp(24px, 8vw, 36px);
+                letter-spacing: -0.5px;
+            }
+        }
+
+        .home-text .sub-headline {
+            font-weight: 400;
+            font-size: clamp(15px, 1.1vw, 17px);
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 480px;
+        }
+
+        @media (max-width: 768px) {
+            .home-text .sub-headline {
+                max-width: 100%;
+                font-size: clamp(13px, 3vw, 15px);
+            }
+        }
+
+        .home-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .home-image {
+                justify-content: center;
+            }
+        }
+
+        .home-image img {
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            border-radius: var(--radius-card);
+            filter: brightness(0.9) contrast(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .home-image img {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .home-image img {
+                max-width: 200px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .home-text {
+                justify-self: start;
+            }
+            .home-image {
+                justify-self: end;
+            }
+        }
+
+        /* ─── BRAND RIBBON ─── */
+        .home .brand-ribbon {
+            flex-shrink: 0;
+            width: 100%;
+            background: var(--shade-black);
+            color: var(--text-primary);
+            padding: 10px 0;
+            overflow: hidden;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .home .brand-ribbon {
+                padding: 8px 0;
+                margin-top: 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .home .brand-ribbon {
+                padding: 6px 0;
+                margin-top: 10px;
+            }
+        }
+
+        .home .brand-ribbon .ribbon-track {
+            display: flex;
+            white-space: nowrap;
+            width: max-content;
+            will-change: transform;
+            animation: scroll-ribbon 28s linear infinite;
+            position: relative;
+        }
+
+        .home .brand-ribbon .ribbon-content {
+            display: flex;
+        }
+
+        .home .brand-ribbon .ribbon-content span {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        @media (max-width: 768px) {
+            .home .brand-ribbon .ribbon-content span {
+                font-size: 14px;
+                padding: 0 16px;
+                letter-spacing: 1.5px;
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .home .brand-ribbon .ribbon-content span {
+                font-size: 11px;
+                padding: 0 10px;
+                letter-spacing: 1px;
+                gap: 4px;
+            }
+        }
+
+        .home .brand-ribbon .ribbon-content span::before {
+            content: "✦";
+            font-size: 14px;
+            opacity: 1;
+            color: var(--brand-red);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .home .brand-ribbon .ribbon-content span::before {
+                font-size: 10px;
+            }
+        }
+
+        @keyframes scroll-ribbon {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ─── SHOP ─── */
+        .shop {
+            padding: 60px 0 0 0;
+            position: relative;
+            z-index: 1;
+            background: var(--shade-black);
+        }
+
+        @media (max-width: 768px) {
+            .shop {
+                padding: 40px 0 0 0;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .shop {
+                padding: 30px 0 0 0;
+            }
+        }
+
+        .shop-container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 5% 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .shop-container {
+                padding: 0 3% 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .shop-container {
+                padding: 0 2% 16px;
+            }
+        }
+
+        .shop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        @media (max-width: 400px) {
+            .shop-header {
+                margin-bottom: 18px;
+                gap: 8px;
+            }
+        }
+
+        .shop-header h2 {
+            color: var(--text-primary);
+            font-size: clamp(22px, 3.5vw, 28px);
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        @media (max-width: 400px) {
+            .shop-header h2 {
+                font-size: 19px;
+            }
+        }
+
+        .btn-view-all {
+            color: var(--brand-red);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 8px 18px;
+            border: 2px solid var(--brand-red);
+            border-radius: var(--radius-btn);
+            transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            white-space: nowrap;
+            min-height: 40px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        @media (max-width: 400px) {
+            .btn-view-all {
+                font-size: 12px;
+                padding: 6px 14px;
+                min-height: 34px;
+            }
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 1200px) {
+            .shop-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 14px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .shop-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .shop-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .shop-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+        }
+
+        /* ─── PRODUCT CARD ─── */
+        .product-card {
+            grid-column: span 1;
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .product-card:focus-visible {
+            outline: 2px solid var(--brand-red);
+            outline-offset: 2px;
+        }
+        .product-card.active {
+            border-color: var(--brand-red);
+            box-shadow: 0 0 0 1px var(--brand-red), var(--shadow-red-hover);
+        }
+        .product-card .card-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+        }
+        .product-card .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: var(--shade-black);
+        }
+        .product-card .view-indicator {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 4px 10px 4px 8px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+        }
+
+        @media (max-width: 400px) {
+            .product-card .view-indicator {
+                font-size: 8px;
+                padding: 2px 7px 2px 5px;
+                top: 4px;
+                right: 4px;
+                gap: 3px;
+            }
+            .product-card .view-indicator svg {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        .product-card .view-indicator svg {
+            width: 13px;
+            height: 13px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+        .product-card.active .view-indicator {
+            opacity: 0;
+        }
+
+        .product-info {
+            padding: 12px 14px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 400px) {
+            .product-info {
+                padding: 8px 8px 10px;
+            }
+        }
+
+        .product-info h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 400px) {
+            .product-info h3 {
+                font-size: 13px;
+            }
+        }
+
+        .price-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: nowrap;
+        }
+        .old-price {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        @media (max-width: 400px) {
+            .old-price {
+                font-size: 10px;
+            }
+        }
+
+        .new-price {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--brand-red);
+        }
+
+        @media (max-width: 400px) {
+            .new-price {
+                font-size: 14px;
+            }
+        }
+
+        .btn-add-cart {
+            font-family: var(--font-family);
+            background: var(--brand-red);
+            color: var(--text-primary);
+            border: none;
+            padding: 8px 0;
+            border-radius: var(--radius-btn);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: auto;
+            width: 100%;
+            box-shadow: var(--shadow-red);
+            transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
+            min-height: 38px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        @media (max-width: 400px) {
+            .btn-add-cart {
+                font-size: 12px;
+                padding: 6px 0;
+                min-height: 32px;
+                border-radius: 22px;
+            }
+        }
+
+        .btn-add-cart:hover:not(:disabled) {
+            background: #FFFFFF !important;
+            color: var(--brand-red) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+            transform: scale(1.02);
+        }
+        .btn-add-cart:disabled,
+        .btn-add-cart:disabled:hover {
+            background: var(--brand-red) !important;
+            color: var(--text-primary) !important;
+            cursor: not-allowed;
+            transform: none !important;
+            opacity: 0.6;
+            box-shadow: var(--shadow-red) !important;
+        }
+
+        /* ═══════════════════════════════════════════════
+           PRODUCT CAROUSEL
+           ═══════════════════════════════════════════════ */
+        .product-carousel-wrapper {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.5s ease,
+                margin 0.3s ease,
+                padding 0.3s ease;
+            margin-top: 0;
+            background: var(--surface);
+            border-radius: var(--radius-section);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-hover);
+            visibility: hidden;
+        }
+        .product-carousel-wrapper.open {
+            max-height: 850px;
+            opacity: 1;
+            margin-top: 20px;
+            padding: 20px 20px 14px;
+            visibility: visible;
+            border-color: rgba(229, 9, 20, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .product-carousel-wrapper.open {
+                max-height: 1000px;
+                padding: 14px 10px 10px;
+                margin-top: 14px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .product-carousel-wrapper.open {
+                max-height: 1100px;
+                padding: 10px 6px 8px;
+                margin-top: 10px;
+                border-radius: 10px;
+            }
+        }
+
+        .carousel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            padding: 0 4px;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-header {
+                margin-bottom: 10px;
+            }
+        }
+
+        .carousel-header h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-header h3 {
+                font-size: 14px;
+            }
+        }
+
+        .carousel-close {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--text-muted);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-family: var(--font-family);
+            line-height: 1;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-close {
+                width: 26px;
+                height: 26px;
+                font-size: 13px;
+            }
+        }
+
+        .carousel-close:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--text-primary);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .carousel-track-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-card);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 2px 4px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+
+        .carousel-slide .slide-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: var(--radius-card);
+            background: var(--shade-black);
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide .slide-image {
+                aspect-ratio: 1 / 1;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .carousel-slide .slide-image {
+                aspect-ratio: 1 / 1;
+                border-radius: 8px;
+            }
+        }
+
+        .carousel-slide .slide-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-slide .slide-content {
+                gap: 4px;
+            }
+        }
+
+        .carousel-slide .slide-category {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--brand-red);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-slide .slide-category {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+        }
+
+        .carousel-slide .slide-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.15;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide .slide-title {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .carousel-slide .slide-title {
+                font-size: 15px;
+            }
+        }
+
+        .carousel-slide .slide-tagline {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-slide .slide-tagline {
+                font-size: 11px;
+            }
+        }
+
+        .carousel-slide .slide-description {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 400px) {
+            .carousel-slide .slide-description {
+                font-size: 11px;
+                line-height: 1.5;
+            }
+        }
+
+        .carousel-slide .slide-price {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--brand-red);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide .slide-price {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .carousel-slide .slide-price {
+                font-size: 18px;
+            }
+        }
+
+        .carousel-slide .slide-old-price {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-left: 8px;
+            font-weight: 400;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-slide .slide-old-price {
+                font-size: 12px;
+                margin-left: 6px;
+            }
+        }
+
+        .carousel-slide .slide-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .carousel-slide .slide-actions .btn-buy-slide {
+            font-family: var(--font-family);
+            background: var(--brand-red);
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: var(--radius-btn);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
+            box-shadow: var(--shadow-red);
+            min-height: 40px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-slide .slide-actions .btn-buy-slide {
+                padding: 8px 18px;
+                font-size: 13px;
+                min-height: 34px;
+                border-radius: 22px;
+            }
+        }
+
+        .btn-buy-slide:hover {
+            background: #FFFFFF !important;
+            color: var(--brand-red) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+            transform: scale(1.02);
+        }
+
+        /* ─── CAROUSEL NAVIGATION ─── */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #fff;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            opacity: 0.6;
+            font-family: var(--font-family);
+            line-height: 1;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .carousel-btn {
+                width: 24px;
+                height: 24px;
+                font-size: 14px;
+            }
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            opacity: 1;
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.05);
+        }
+        .carousel-btn.prev {
+            left: 4px;
+        }
+        .carousel-btn.next {
+            right: 4px;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-btn.prev {
+                left: 2px;
+            }
+            .carousel-btn.next {
+                right: 2px;
+            }
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 12px;
+            padding-bottom: 2px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-indicators {
+                gap: 4px;
+                margin-top: 8px;
+            }
+        }
+
+        .carousel-indicators .dot-indicator {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--border-color);
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        @media (max-width: 400px) {
+            .carousel-indicators .dot-indicator {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        .carousel-indicators .dot-indicator.active {
+            background: var(--brand-red);
+            transform: scale(1.3);
+        }
+        .carousel-indicators .dot-indicator:hover {
+            background: var(--text-muted);
+        }
+
+        /* ═══════════════════════════════════════════════
+           GLOBAL BUTTON HOVER EFFECTS (keep these)
+           ═══════════════════════════════════════════════ */
+        .cta:hover,
+        .btn-view-all:hover,
+        .btn-add-review:hover,
+        .btn-submit:hover,
+        .btn-submit-review:hover {
+            background: #FFFFFF !important;
+            color: var(--brand-red) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+        }
+        .btn-view-all:hover {
+            border-color: #FFFFFF !important;
+        }
+        .carousel-btn:hover,
+        .carousel-close:hover {
+            background: rgba(255, 255, 255, 0.15) !important;
+            color: #fff !important;
+            border-color: rgba(255, 255, 255, 0.3) !important;
+            box-shadow: none !important;
+        }
+
+        /* ─── NAVIGATION (MOBILE) ─── */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: auto 1fr auto;
+                position: relative;
+            }
+            nav {
+                position: absolute;
+                top: calc(100% + 6px);
+                left: 8px;
+                right: 8px;
+                width: auto;
+                flex-direction: column;
+                gap: 14px;
+                padding: 20px;
+                background: var(--surface);
+                border: 1px solid var(--border-color);
+                border-radius: 14px;
+                box-shadow: var(--shadow-hover);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+                z-index: 100;
+            }
+            nav.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            .cta {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+                justify-self: end;
+            }
+        }
+
+        @media (max-width: 400px) {
+            nav {
+                left: 4px;
+                right: 4px;
+                top: calc(100% + 4px);
+                padding: 14px;
+                gap: 10px;
+                border-radius: 10px;
+            }
+            nav a {
+                font-size: 13px;
+            }
+        }
+
+        /* ─── ABOUT ─── */
+        .about {
+            padding: 50px 5%;
+            position: relative;
+            z-index: 1;
+            background: var(--shade-grey);
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                padding: 35px 4%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .about {
+                padding: 25px 3%;
+            }
+        }
+
+        .about-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .about-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-section);
+            padding: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .about-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .about-card {
+                padding: 14px;
+                border-radius: 10px;
+            }
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .about-grid {
+                gap: 14px;
+            }
+        }
+
+        .about-text h2 {
+            color: var(--text-primary);
+            font-size: clamp(22px, 3vw, 28px);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 400px) {
+            .about-text h2 {
+                font-size: 19px;
+                margin-bottom: 12px;
+            }
+        }
+
+        .about-text p {
+            font-size: clamp(14px, 1vw, 16px);
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: 400px) {
+            .about-text p {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .about-text p strong {
+            color: var(--text-primary);
+            font-weight: 700;
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .about-images {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 340px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .about-images {
+                max-width: 280px;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .about-images {
+                max-width: 220px;
+                gap: 8px;
+            }
+        }
+
+        .about-image-item {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            background: var(--shade-black);
+        }
+        .about-image-item img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ─── REVIEWS ─── */
+        .reviews {
+            padding: 50px 5%;
+            position: relative;
+            z-index: 1;
+            background: var(--shade-black);
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .reviews {
+                padding: 35px 4%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .reviews {
+                padding: 25px 3%;
+            }
+        }
+
+        .reviews-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 26px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        @media (max-width: 400px) {
+            .reviews-header {
+                margin-bottom: 18px;
+                gap: 8px;
+            }
+        }
+
+        .reviews-header h2 {
+            color: var(--text-primary);
+            font-size: clamp(22px, 3vw, 28px);
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        @media (max-width: 400px) {
+            .reviews-header h2 {
+                font-size: 19px;
+            }
+        }
+
+        .btn-add-review {
+            font-family: var(--font-family);
+            background: var(--brand-red);
+            color: var(--text-primary);
+            border: none;
+            padding: 8px 18px;
+            border-radius: var(--radius-btn);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-red);
+            min-height: 40px;
+            white-space: nowrap;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        @media (max-width: 400px) {
+            .btn-add-review {
+                font-size: 12px;
+                padding: 6px 14px;
+                min-height: 34px;
+                border-radius: 22px;
+            }
+        }
+
+        .review-track-container {
+            overflow: hidden;
+            width: 100%;
+            padding: 10px 0;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        @media (max-width: 400px) {
+            .review-track-container {
+                padding: 6px 0;
+            }
+        }
+
+        .review-track {
+            display: flex;
+            gap: 18px;
+            width: max-content;
+            will-change: transform;
+            animation: scroll-reviews 40s linear infinite;
+        }
+
+        @media (max-width: 768px) {
+            .review-track {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .review-track {
+                gap: 8px;
+            }
+        }
+
+        .review-card {
+            flex: 0 0 260px;
+            padding: 18px;
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .review-card {
+                flex: 0 0 220px;
+                padding: 14px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .review-card {
+                flex: 0 0 180px;
+                padding: 10px;
+                gap: 2px;
+            }
+        }
+
+        .review-card .stars {
+            color: var(--warning);
+            font-size: 15px;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 400px) {
+            .review-card .stars {
+                font-size: 13px;
+                letter-spacing: 1.5px;
+            }
+        }
+
+        .review-card .name {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 400px) {
+            .review-card .name {
+                font-size: 12px;
+            }
+        }
+
+        .review-card .comment {
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.5;
+            margin-top: 2px;
+            flex: 1;
+        }
+
+        @media (max-width: 400px) {
+            .review-card .comment {
+                font-size: 11px;
+                line-height: 1.4;
+            }
+        }
+
+        .review-card .date {
+            color: var(--text-muted);
+            font-size: 10px;
+            margin-top: 4px;
+        }
+
+        @keyframes scroll-reviews {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ─── CONTACT ─── */
+        .contact {
+            padding: 50px 5%;
+            position: relative;
+            z-index: 1;
+            background: var(--shade-grey);
+        }
+
+        @media (max-width: 768px) {
+            .contact {
+                padding: 35px 4%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .contact {
+                padding: 25px 3%;
+            }
+        }
+
+        .contact-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .contact-container {
+                gap: 14px;
+            }
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-section);
+            padding: 28px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .contact-card {
+                padding: 14px;
+                border-radius: 10px;
+            }
+        }
+
+        .contact-card h2 {
+            color: var(--text-primary);
+            font-size: clamp(20px, 3vw, 28px);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 400px) {
+            .contact-card h2 {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        @media (max-width: 400px) {
+            .contact-details {
+                gap: 10px;
+            }
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        @media (max-width: 400px) {
+            .contact-detail-item {
+                font-size: 12px;
+                gap: 8px;
+            }
+        }
+
+        .contact-detail-item svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--brand-red);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 400px) {
+            .contact-detail-item svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        .btn-submit {
+            background: var(--brand-red);
+            color: var(--text-primary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--radius-btn);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-red);
+            min-height: 42px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        @media (max-width: 400px) {
+            .btn-submit {
+                font-size: 13px;
+                padding: 8px 16px;
+                min-height: 36px;
+                border-radius: 22px;
+            }
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--brand-red);
+            color: #FFFFFF;
+            padding: 22px 5% 12px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 -4px 24px rgba(229, 9, 20, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 18px 4% 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            footer {
+                padding: 14px 3% 8px;
+            }
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+        }
+
+        .footer-brand h3 {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 400px) {
+            .footer-brand h3 {
+                font-size: 16px;
+                letter-spacing: 1.5px;
+            }
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 480px) {
+            .footer-links {
+                justify-content: center;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .footer-links {
+                gap: 8px;
+            }
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 400px) {
+            .footer-links a {
+                font-size: 11px;
+            }
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 10px;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: 400;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 400px) {
+            .footer-bottom {
+                font-size: 10px;
+                padding-top: 8px;
+                margin-top: 8px;
+            }
+        }
+
+        /* ─── MODAL ─── */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 28px;
+            max-width: 440px;
+            width: 100%;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @media (max-width: 400px) {
+            .modal-box {
+                padding: 18px;
+                border-radius: 12px;
+                max-width: 95vw;
+            }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-muted);
+            background: none;
+            border: none;
+            transition: color var(--transition);
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            padding: 4px;
+        }
+
+        @media (max-width: 400px) {
+            .modal-close {
+                font-size: 20px;
+                top: 8px;
+                right: 10px;
+            }
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+        .modal-box h3 {
+            color: var(--text-primary);
+            font-size: clamp(20px, 2.5vw, 24px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: 400px) {
+            .modal-box h3 {
+                font-size: 17px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 400px) {
+            .form-group {
+                margin-bottom: 8px;
+            }
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 3px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 400px) {
+            .form-group label {
+                font-size: 11px;
+            }
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background: var(--shade-black);
+            font-family: var(--font-family);
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: border-color var(--transition), box-shadow var(--transition);
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        @media (max-width: 400px) {
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 13px;
+                padding: 7px 10px;
+                border-radius: 8px;
+            }
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--brand-red);
+            box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.15);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+        .btn-submit-review {
+            background: var(--brand-red);
+            color: var(--text-primary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--radius-btn);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-red);
+            min-height: 42px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        @media (max-width: 400px) {
+            .btn-submit-review {
+                font-size: 13px;
+                padding: 8px 16px;
+                min-height: 36px;
+                border-radius: 22px;
+            }
+        }
+
+        .form-status {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+            font-size: 14px;
+        }
+        .form-status.success {
+            color: var(--success);
+            display: block;
+        }
+        .form-status.error {
+            color: var(--warning);
+            display: block;
+        }
+
+        /* ─── REDUCED MOTION ─── */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .home .brand-ribbon .ribbon-track {
+                animation: none !important;
+            }
+            .review-track {
+                animation: none !important;
+            }
+            .product-carousel-wrapper {
+                transition: none !important;
+            }
+            .product-carousel-wrapper.open {
+                max-height: none;
+                padding: 20px;
+                margin-top: 20px;
+                opacity: 1;
+                visibility: visible;
+            }
+            .carousel-track {
+                transition: none !important;
+            }
+        }
+
+        /* ─── TOUCH DEVICE OPTIMIZATIONS ─── */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-add-cart:hover:not(:disabled) {
+                background: var(--brand-red) !important;
+                color: var(--text-primary) !important;
+                transform: none !important;
+                box-shadow: var(--shadow-red) !important;
+            }
+            .btn-add-cart:active:not(:disabled) {
+                background: #FFFFFF !important;
+                color: var(--brand-red) !important;
+                transform: scale(0.96) !important;
+            }
+            .btn-buy-slide:hover {
+                background: var(--brand-red) !important;
+                color: #fff !important;
+                transform: none !important;
+                box-shadow: var(--shadow-red) !important;
+            }
+            .btn-buy-slide:active {
+                background: #FFFFFF !important;
+                color: var(--brand-red) !important;
+                transform: scale(0.96) !important;
+            }
+            .cta:hover,
+            .btn-view-all:hover,
+            .btn-add-review:hover,
+            .btn-submit:hover,
+            .btn-submit-review:hover {
+                background: var(--brand-red) !important;
+                color: var(--text-primary) !important;
+                box-shadow: var(--shadow-red) !important;
+            }
+            .cta:active,
+            .btn-view-all:active,
+            .btn-add-review:active,
+            .btn-submit:active,
+            .btn-submit-review:active {
+                background: #FFFFFF !important;
+                color: var(--brand-red) !important;
+                transform: scale(0.96) !important;
+            }
+            .btn-view-all:active {
+                border-color: #FFFFFF !important;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Aima's Digital Store",
+            "url": "https://www.aimasdigitalstore.com/",
+            "description": "Premium digital products including templates, planners, bundles, UI kits, and more."
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "CHATGPT PROMPT BUNDLE",
+                        "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "999",
+                            "availability": "https://schema.org/InStock" } } },
+                { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Cartoon Comedy Reels Bundle",
+                        "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "999",
+                            "availability": "https://schema.org/InStock" } } },
+                { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "Canva Pro Templates Bundle",
+                        "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "999",
+                            "availability": "https://schema.org/InStock" } } },
+                { "@type": "ListItem", "position": 4, "item": { "@type": "Product", "name": "Content Creator Kit Bundle",
+                        "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "999",
+                            "availability": "https://schema.org/InStock" } } },
+                { "@type": "ListItem", "position": 5, "item": { "@type": "Product", "name": "Super Hero Ai Reels Bundle",
+                        "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "999",
+                            "availability": "https://schema.org/InStock" } } },
+                { "@type": "ListItem", "position": 6, "item": { "@type": "Product", "name": "Social Media Kit Bundle",
+                        "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "999",
+                            "availability": "https://schema.org/InStock" } } },
+                { "@type": "ListItem", "position": 7, "item": { "@type": "Product", "name": "Font Bundle",
+                        "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "2200",
+                            "availability": "https://schema.org/InStock" } } },
+                { "@type": "ListItem", "position": 8, "item": { "@type": "Product", "name": "Stock Photos",
+                        "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "999",
+                            "availability": "https://schema.org/InStock" } } },
+                { "@type": "ListItem", "position": 9, "item": { "@type": "Product", "name": "UI Kit",
+                        "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "3400",
+                            "availability": "https://schema.org/InStock" } } },
+                { "@type": "ListItem", "position": 10, "item": { "@type": "Product", "name": "Web Templates",
+                        "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "2799",
+                            "availability": "https://schema.org/InStock" } } }
+            ]
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- ─── HEADER ─── -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">AIMA</a>
+            <nav id="nav" aria-label="Main Navigation">
+                <a href="#home">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="#about">About</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a class="cta" href="https://wa.me/923351182296" target="_blank" rel="noopener noreferrer">Chat Now</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ─── MAIN ─── -->
+    <main role="main">
+
+        <!-- ─── HOME ─── -->
+        <section class="home" id="home">
+            <div class="home-content">
+                <div class="home-text">
+                    <h1>Digital <br />Products That <br />Empower You</h1>
+                    <p class="sub-headline">
+                        Discover premium digital tools, templates, and resources crafted to
+                        elevate your work, streamline your process, and spark creativity.
+                    </p>
+                </div>
+                <div class="home-image">
+                    <img src="images/home.png" alt="Aima's Digital Store - hero illustration" loading="lazy" />
+                </div>
+            </div>
+            <div class="brand-ribbon">
+                <div class="ribbon-track">
+                    <div class="ribbon-content">
+                        <span>Aima's Digital Store</span><span>Aima's Digital Store</span>
+                        <span>Aima's Digital Store</span><span>Aima's Digital Store</span>
+                        <span>Aima's Digital Store</span>
+                    </div>
+                    <div class="ribbon-content">
+                        <span>Aima's Digital Store</span><span>Aima's Digital Store</span>
+                        <span>Aima's Digital Store</span><span>Aima's Digital Store</span>
+                        <span>Aima's Digital Store</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── SHOP ─── -->
+        <section class="shop" id="shop">
+            <div class="shop-container">
+                <div class="shop-header">
+                    <h2>Featured Products</h2>
+                    <a href="shopviewall.html" class="btn-view-all">View All →</a>
+                </div>
+
+                <div class="shop-grid" id="productGrid">
+                    <!-- Products rendered by JavaScript -->
+                </div>
+
+                <!-- ─── PRODUCT CAROUSEL ─── -->
+                <div class="product-carousel-wrapper" id="productCarousel">
+                    <div class="carousel-header">
+                        <h3>Product Details</h3>
+                        <button class="carousel-close" id="closeCarouselBtn" aria-label="Close carousel">✕</button>
+                    </div>
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="carouselTrack">
+                            <!-- Slides rendered by JavaScript -->
+                        </div>
+                        <button class="carousel-btn prev" id="carouselPrev" aria-label="Previous product">‹</button>
+                        <button class="carousel-btn next" id="carouselNext" aria-label="Next product">›</button>
+                    </div>
+                    <div class="carousel-indicators" id="carouselIndicators">
+                        <!-- Indicators rendered by JavaScript -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ─── ABOUT ─── -->
+        <section class="about" id="about">
+            <div class="about-container">
+                <div class="about-card">
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <h2>About Aima's Digital Store</h2>
+                            <p><strong>Our Story</strong> Aima's Digital Store is a premier destination for digital products, offering a curated selection of high-quality resources designed to empower professionals and creatives.</p>
+                            <p><strong>Vision &amp; Mission</strong> Our vision is to become a global leader in the digital product space. Our mission is to provide tools that simplify work, enhance creativity, and drive success.</p>
+                            <p><strong>Meet the Founder</strong> Aima is a dedicated entrepreneur with a deep passion for technology and design. With a background in digital strategy, Aima founded this store to provide a trusted platform where quality meets convenience.</p>
+                        </div>
+                        <div class="about-images">
+                            <!-- Vision & Mission image removed -->
+                            <div class="about-image-item"><img src="images/ceoimg.jpg" alt="Founder" loading="lazy" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── REVIEWS ─── -->
+        <section class="reviews" id="reviews">
+            <div class="reviews-container">
+                <div class="reviews-header">
+                    <h2>Customer Reviews</h2>
+                    <button class="btn-add-review" id="openReviewModal">Add Review</button>
+                </div>
+                <div class="review-track-container">
+                    <div class="review-track" id="reviewTrack"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── REVIEW MODAL ─── -->
+        <div class="modal-overlay" id="reviewModal">
+            <div class="modal-box">
+                <button class="modal-close" id="closeReviewModal" aria-label="Close">&times;</button>
+                <h3>Share Your Feedback</h3>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="reviewName">Your Name</label>
+                        <input type="text" id="reviewName" name="name" placeholder="e.g. John Doe" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewRating">Rating</label>
+                        <select id="reviewRating" name="rating" required>
+                            <option value="5">★★★★★ (5)</option>
+                            <option value="4">★★★★☆ (4)</option>
+                            <option value="3">★★★☆☆ (3)</option>
+                            <option value="2">★★☆☆☆ (2)</option>
+                            <option value="1">★☆☆☆☆ (1)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewComment">Your Review</label>
+                        <textarea id="reviewComment" name="comment" placeholder="Share your experience..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit-review" id="submitReviewBtn">Submit Review</button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- ─── CONTACT ─── -->
+        <section class="contact" id="contact">
+            <div class="contact-container">
+                <div class="contact-card">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <span>123 Digital Avenue, Lahore, Pakistan</span>
+                        </div>
+                        <div class="contact-detail-item">
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            <span>+92 335 1182296</span>
+                        </div>
+                        <div class="contact-detail-item">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <span>aimakhan2315@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" name="name" placeholder="John Doe" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email</label>
+                            <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="message" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand"><h3>AIMA</h3></div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="#about">About</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Aima's Digital Store. All rights reserved.</div>
+    </footer>
+
+    <!-- ─── SCRIPT ─── -->
+    <script>
+        (function() {
+            "use strict";
+
+            // ─── PRODUCT DATA ───
+            const products = [
+                { id: 'gpt-bundle', name: 'CHATGPT PROMPT BUNDLE', category: 'AI Tools',
+                    tagline: 'Unlock the full potential of AI with 500+ curated prompts.',
+                    description: 'The ultimate ChatGPT prompt collection for marketers, writers, developers, and entrepreneurs. Save hours of brainstorming with done-for-you prompts that deliver exceptional results.',
+                    price: 'PKR 999', oldPrice: 'PKR 1,999', image: 'images/chatgpt.png',
+                    features: ['500+ Premium Prompts', '10+ Categories', 'Regular Updates', 'Lifetime Access'],
+                    downloadLink: 'https://drive.google.com/drive/folders/example-gpt-bundle',
+                    downloadLabel: 'Google Drive',
+                    related: ['Cartoon Comedy Reels Bundle', 'Canva Pro Templates Bundle', 'Content Creator Kit'] },
+                { id: 'cartoon-comedy', name: 'Cartoon Comedy Reels Bundle', category: 'Video Content',
+                    tagline: 'Make your audience laugh with ready-to-use cartoon comedy templates.',
+                    description: 'A massive collection of cartoon-style comedy reels templates for social media. Perfect for content creators looking to boost engagement with humor.',
+                    price: 'PKR 999', oldPrice: 'PKR 1,999', image: 'images/cartooncomedy.png',
+                    features: ['50+ Premade Reels', 'Drag & Drop Editing', 'Royalty-Free Music', '4K Resolution'],
+                    downloadLink: 'https://mega.nz/folder/example-cartoon-comedy', downloadLabel: 'Mega',
+                    related: ['Super Hero Ai Reels Bundle', 'Social Media Kit Bundle', 'Content Creator Kit'] },
+                { id: 'canva-templates', name: 'Canva Pro Templates Bundle', category: 'Design',
+                    tagline: 'Create stunning visuals in minutes with 200+ Canva templates.',
+                    description: 'Professional Canva templates for social media, presentations, marketing materials, and more. Fully customizable and designed to convert.',
+                    price: 'PKR 999', oldPrice: 'PKR 1,999', image: 'images/canva.png',
+                    features: ['200+ Editable Templates', 'All Sizes Included', 'Brand Kit Ready', 'Commercial License'],
+                    downloadLink: 'https://drive.google.com/drive/folders/example-canva', downloadLabel: 'Google Drive',
+                    related: ['Social Media Kit Bundle', 'UI Kit', 'Web Templates'] },
+                { id: 'content-creator', name: 'Content Creator Kit Bundle', category: 'Creator Tools',
+                    tagline: 'Everything you need to grow your audience and monetize your content.',
+                    description: 'The all-in-one content creator bundle with templates, guides, and resources to help you build a thriving personal brand online.',
+                    price: 'PKR 999', oldPrice: 'PKR 1,999', image: 'images/contentcreatorkit.png',
+                    features: ['Content Calendar', 'Growth Guides', 'Monetization Strategies', 'Creator Checklists'],
+                    downloadLink: 'https://mega.nz/folder/example-creator-kit', downloadLabel: 'Mega',
+                    related: ['Cartoon Comedy Reels Bundle', 'Social Media Kit Bundle', 'Stock Photos'] },
+                { id: 'superhero-ai', name: 'Super Hero Ai Reels Bundle', category: 'Video Content',
+                    tagline: 'Turn your videos into epic superhero-style content with AI magic.',
+                    description: 'Cutting-edge AI-powered superhero reel templates. Add cinematic effects, AI voiceovers, and dynamic transitions to your videos.',
+                    price: 'PKR 999', oldPrice: 'PKR 1,999', image: 'images/superheroai.png',
+                    features: ['AI-Powered Effects', 'Cinematic Transitions', 'Voiceover Included', '4K Export'],
+                    downloadLink: 'https://drive.google.com/drive/folders/example-superhero',
+                    downloadLabel: 'Google Drive',
+                    related: ['Cartoon Comedy Reels Bundle', 'Content Creator Kit', 'UI Kit'] },
+                { id: 'social-media-kit', name: 'Social Media Kit Bundle', category: 'Social Media',
+                    tagline: 'Dominate social media with a complete kit of templates and strategies.',
+                    description: 'The ultimate social media toolkit with templates, captions, hashtags, and growth strategies for Instagram, TikTok, LinkedIn, and more.',
+                    price: 'PKR 999', oldPrice: 'PKR 1,999', image: 'images/socialmediakit.png',
+                    features: ['100+ Post Templates', 'Caption Library', 'Hashtag Research', 'Growth Blueprint'],
+                    downloadLink: 'https://mega.nz/folder/example-social-kit', downloadLabel: 'Mega',
+                    related: ['Canva Pro Templates Bundle', 'Content Creator Kit', 'Stock Photos'] },
+                { id: 'font-bundle', name: 'Font Bundle', category: 'Design',
+                    tagline: 'A curated collection of premium fonts for every design project.',
+                    description: 'Access 150+ premium fonts spanning modern, vintage, script, display, and more. Perfect for branding, web design, and print materials.',
+                    price: 'PKR 2,200', oldPrice: 'PKR 3,500', image: 'images/product7.jpg',
+                    features: ['150+ Premium Fonts', 'Commercial License', 'OTF & TTF Formats', 'Web Fonts Included'],
+                    downloadLink: 'https://drive.google.com/drive/folders/example-fonts', downloadLabel: 'Google Drive',
+                    related: ['UI Kit', 'Web Templates', 'Canva Pro Templates Bundle'] },
+                { id: 'stock-photos', name: 'Stock Photos', category: 'Photography',
+                    tagline: 'High-resolution stock photos for all your creative needs.',
+                    description: 'A diverse collection of 500+ high-quality stock photos covering business, lifestyle, nature, technology, and more. Royalty-free and ready to use.',
+                    price: 'PKR 999', oldPrice: 'PKR 1,500', image: 'images/product8.jpg',
+                    features: ['500+ Photos', 'High Resolution (4K+)', 'Royalty-Free', 'Commercial Use'],
+                    downloadLink: 'https://mega.nz/folder/example-stock', downloadLabel: 'Mega',
+                    related: ['Web Templates', 'Social Media Kit Bundle', 'Canva Pro Templates Bundle'] },
+                { id: 'ui-kit', name: 'UI Kit', category: 'Design',
+                    tagline: 'A comprehensive UI kit for building beautiful, modern interfaces.',
+                    description: 'Complete UI design system with 500+ components, 100+ screens, and a robust design system for Figma, Sketch, and Adobe XD.',
+                    price: 'PKR 3,400', oldPrice: 'PKR 5,500', image: 'images/product9.jpg',
+                    features: ['500+ Components', '100+ Screens', 'Dark/Light Mode', 'Design System Included'],
+                    downloadLink: 'https://drive.google.com/drive/folders/example-ui-kit', downloadLabel: 'Google Drive',
+                    related: ['Web Templates', 'Font Bundle', 'Canva Pro Templates Bundle'] },
+                { id: 'web-templates', name: 'Web Templates', category: 'Web Design',
+                    tagline: 'Professional, responsive web templates for any project.',
+                    description: 'A collection of 50+ responsive HTML/CSS templates for portfolios, agencies, e-commerce, SaaS, and more. Clean code, modern design.',
+                    price: 'PKR 2,799', oldPrice: 'PKR 4,200', image: 'images/product10.jpg',
+                    features: ['50+ Templates', 'Responsive Design', 'HTML/CSS/JS', 'Documentation Included'],
+                    downloadLink: 'https://mega.nz/folder/example-web-templates', downloadLabel: 'Mega',
+                    related: ['UI Kit', 'Font Bundle', 'Stock Photos'] }
+            ];
+
+            // ─── DOM REFS ───
+            const grid = document.getElementById('productGrid');
+            const carouselWrapper = document.getElementById('productCarousel');
+            const carouselTrack = document.getElementById('carouselTrack');
+            const indicators = document.getElementById('carouselIndicators');
+            const closeBtn = document.getElementById('closeCarouselBtn');
+            const prevBtn = document.getElementById('carouselPrev');
+            const nextBtn = document.getElementById('carouselNext');
+
+            let currentSlide = 0;
+            let isOpen = false;
+
+            // ─── RENDER PRODUCT CARDS ───
+            function renderProducts() {
+                grid.innerHTML = products.map(p => `
+                    <div class="product-card" data-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
+                        <div class="card-image-wrapper">
+                            <img src="${p.image}" alt="${p.name}" loading="lazy" />
+                            <div class="view-indicator">
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                View
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>${p.name}</h3>
+                            <div class="price-wrapper">
+                                <span class="old-price">${p.oldPrice}</span>
+                                <span class="new-price">${p.price}</span>
+                            </div>
+                            <button class="btn-add-cart" data-product="${p.name}" aria-label="Buy ${p.name}">Buy Now</button>
+                        </div>
+                    </div>
+                `).join('');
+
+                document.querySelectorAll('.product-card').forEach(card => {
+                    card.addEventListener('click', function(e) {
+                        if (e.target.closest('.btn-add-cart')) return;
+                        const id = this.dataset.id;
+                        const index = products.findIndex(p => p.id === id);
+                        if (index > -1) openCarousel(index);
+                    });
+                    card.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            const id = this.dataset.id;
+                            const index = products.findIndex(p => p.id === id);
+                            if (index > -1) openCarousel(index);
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.btn-add-cart').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const productName = this.dataset.product;
+                        const phoneNumber = '923351182296';
+                        const message = `Hi, I'm interested in buying: ${productName}`;
+                        const url =
+                            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                        const originalText = this.textContent;
+                        this.disabled = true;
+                        this.textContent = 'Redirecting...';
+                        setTimeout(() => {
+                            window.open(url, '_blank');
+                            setTimeout(() => {
+                                this.disabled = false;
+                                this.textContent = originalText;
+                            }, 2000);
+                        }, 300);
+                    });
+                });
+            }
+
+            // ─── CAROUSEL LOGIC ───
+            function buildCarousel() {
+                carouselTrack.innerHTML = products.map(p => `
+                    <div class="carousel-slide" data-id="${p.id}">
+                        <img class="slide-image" src="${p.image}" alt="${p.name}" loading="lazy" />
+                        <div class="slide-content">
+                            <div class="slide-category">${p.category || 'Digital Product'}</div>
+                            <div class="slide-title">${p.name}</div>
+                            <div class="slide-tagline">${p.tagline || ''}</div>
+                            <div class="slide-description">${p.description || ''}</div>
+                            <div>
+                                <span class="slide-price">${p.price}</span>
+                                ${p.oldPrice ? `<span class="slide-old-price">${p.oldPrice}</span>` : ''}
+                            </div>
+                            <div class="slide-actions">
+                                <button class="btn-buy-slide" data-product="${p.name}">Buy Now — ${p.price}</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                carouselTrack.querySelectorAll('.btn-buy-slide').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const productName = this.dataset.product;
+                        const phoneNumber = '923351182296';
+                        const message = `Hi, I'm interested in buying: ${productName}`;
+                        const url =
+                            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                        const originalText = this.textContent;
+                        this.disabled = true;
+                        this.textContent = 'Redirecting...';
+                        setTimeout(() => {
+                            window.open(url, '_blank');
+                            setTimeout(() => {
+                                this.disabled = false;
+                                this.textContent = originalText;
+                            }, 2000);
+                        }, 300);
+                    });
+                });
+
+                indicators.innerHTML = products.map((_, i) =>
+                    `<button class="dot-indicator ${i === 0 ? 'active' : ''}" data-index="${i}" aria-label="Go to slide ${i+1}"></button>`
+                ).join('');
+
+                indicators.querySelectorAll('.dot-indicator').forEach(dot => {
+                    dot.addEventListener('click', function() {
+                        const index = parseInt(this.dataset.index);
+                        goToSlide(index);
+                    });
+                });
+            }
+
+            function openCarousel(index) {
+                currentSlide = index;
+                carouselWrapper.classList.add('open');
+                isOpen = true;
+                document.querySelectorAll('.product-card').forEach(c => c.classList.remove('active'));
+                const card = document.querySelector(`.product-card[data-id="${products[index].id}"]`);
+                if (card) card.classList.add('active');
+                updateCarousel();
+                setTimeout(() => {
+                    const wrapperRect = carouselWrapper.getBoundingClientRect();
+                    const headerHeight = document.querySelector('header').offsetHeight || 60;
+                    const targetY = window.scrollY + wrapperRect.top - headerHeight - 16;
+                    window.scrollTo({ top: targetY, behavior: 'smooth' });
+                }, 150);
+                history.pushState({ productId: products[index].id }, '', `#product-${products[index].id}`);
+                setTimeout(() => closeBtn.focus(), 300);
+            }
+
+            function closeCarousel() {
+                carouselWrapper.classList.remove('open');
+                isOpen = false;
+                document.querySelectorAll('.product-card').forEach(c => c.classList.remove('active'));
+                if (window.location.hash) {
+                    history.pushState(null, '', window.location.pathname);
+                }
+                const lastCard = document.querySelector('.product-card');
+                if (lastCard) lastCard.focus();
+            }
+
+            function goToSlide(index) {
+                if (index < 0) index = products.length - 1;
+                if (index >= products.length) index = 0;
+                currentSlide = index;
+                updateCarousel();
+            }
+
+            function updateCarousel() {
+                carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+                indicators.querySelectorAll('.dot-indicator').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentSlide);
+                });
+                document.querySelectorAll('.product-card').forEach(c => c.classList.remove('active'));
+                const card = document.querySelector(`.product-card[data-id="${products[currentSlide].id}"]`);
+                if (card) card.classList.add('active');
+            }
+
+            // ─── EVENT LISTENERS ───
+            closeBtn.addEventListener('click', closeCarousel);
+            prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && isOpen) closeCarousel();
+                if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && isOpen) {
+                    e.preventDefault();
+                    goToSlide(e.key === 'ArrowLeft' ? currentSlide - 1 : currentSlide + 1);
+                }
+            });
+
+            window.addEventListener('hashchange', function() {
+                const hash = window.location.hash;
+                if (hash && hash.startsWith('#product-')) {
+                    const id = hash.replace('#product-', '');
+                    const index = products.findIndex(p => p.id === id);
+                    if (index > -1 && !isOpen) {
+                        openCarousel(index);
+                    } else if (index > -1 && isOpen) {
+                        currentSlide = index;
+                        updateCarousel();
+                    }
+                } else if (!hash && isOpen) {
+                    closeCarousel();
+                }
+            });
+
+            // ─── HAMBURGER ───
+            function initHamburger() {
+                const hamburger = document.getElementById('hamburger');
+                const nav = document.getElementById('nav');
+                if (!hamburger || !nav) return;
+
+                function toggleMenu(expanded) {
+                    hamburger.classList.toggle('active', expanded);
+                    nav.classList.toggle('active', expanded);
+                    hamburger.setAttribute('aria-expanded', expanded);
+                }
+
+                hamburger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleMenu(!nav.classList.contains('active'));
+                });
+
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (nav.classList.contains('active')) toggleMenu(false);
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    const header = document.querySelector('header');
+                    if (!header.contains(e.target) && nav.classList.contains('active')) {
+                        toggleMenu(false);
+                    }
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && nav.classList.contains('active')) {
+                        toggleMenu(false);
+                    }
+                });
+            }
+
+            // ─── REVIEWS (with train animation) ───
+            function initReviews() {
+                const track = document.getElementById('reviewTrack');
+                if (!track) return;
+                const reviewsData = [
+                    { name: "Ayesha Khan", rating: 5,
+                        comment: "Absolutely loved the digital planner! It's beautifully designed and super functional." },
+                    { name: "Ali Ahmed", rating: 5,
+                        comment: "The UI Kit saved me hours of design work. Highly recommend to all developers!" },
+                    { name: "Fatima Noor", rating: 5,
+                        comment: "Premium Bundle is worth every penny. The templates are top-notch." },
+                    { name: "Usman Malik", rating: 4,
+                        comment: "Great quality products. The bundle was a steal for the price." },
+                    { name: "Zara Hassan", rating: 5,
+                        comment: "Fantastic customer service and top-notch digital assets." },
+                    { name: "Hamza Ali", rating: 4,
+                        comment: "Social templates are perfect for my business. Very professional designs." },
+                    { name: "Hira Shah", rating: 4, comment: "Good products, great value. Would recommend to others." },
+                    { name: "Bilal Ahmed", rating: 5,
+                        comment: "The E-book Pack has some incredible reads. Absolutely love the variety." },
+                    { name: "Maha Zain", rating: 5,
+                        comment: "I love the font bundle! It's perfect for my design projects." },
+                    { name: "Hassan Raza", rating: 4,
+                        comment: "Stock photos are high quality. Would love to see more variety." },
+                    { name: "Anam Shahid", rating: 5,
+                        comment: "The Digital Planner has transformed how I organize my work. Game-changer!" },
+                    { name: "Danish Khan", rating: 5,
+                        comment: "Premium Bundle saved me hundreds of dollars. Exceptional quality." },
+                    { name: "Sana Farooq", rating: 4,
+                        comment: "Great products overall. The UI Kit is very comprehensive." },
+                    { name: "Fahad Ali", rating: 5,
+                        comment: "Social Templates are amazing! My engagement increased significantly." },
+                    { name: "Mehak Ahmed", rating: 5,
+                        comment: "The Mockup Set is so versatile. Used it for multiple client projects." }
+                ];
+                // Duplicate for seamless looping (train effect)
+                const allReviews = [...reviewsData, ...reviewsData];
+                track.innerHTML = allReviews.map(review => `
+                    <div class="review-card">
+                        <div class="stars">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</div>
+                        <div class="name">${review.name}</div>
+                        <div class="comment">${review.comment}</div>
+                        <div class="date">${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
+                    </div>
+                `).join('');
+            }
+
+            // ─── REVIEW MODAL ───
+            function initReviewModal() {
+                const modal = document.getElementById('reviewModal');
+                const openBtn = document.getElementById('openReviewModal');
+                const closeBtnModal = document.getElementById('closeReviewModal');
+                const form = document.getElementById('reviewForm');
+                const formStatus = document.getElementById('formStatus');
+                const submitBtn = document.getElementById('submitReviewBtn');
+                if (!modal || !openBtn || !closeBtnModal || !form) return;
+
+                function openModal() {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    formStatus.className = 'form-status';
+                    formStatus.textContent = '';
+                    const firstInput = form.querySelector('input, select, textarea');
+                    if (firstInput) setTimeout(() => firstInput.focus(), 100);
+                }
+
+                function closeModal() {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    openBtn.focus();
+                }
+
+                openBtn.addEventListener('click', openModal);
+                closeBtnModal.addEventListener('click', closeModal);
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) closeModal();
+                });
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+                });
+
+                const REVIEW_FORM_URL = 'https://formspree.io/f/xaqgjdrl';
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    const data = {
+                        name: formData.get('name'),
+                        rating: formData.get('rating'),
+                        comment: formData.get('comment')
+                    };
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    formStatus.className = 'form-status';
+                    formStatus.textContent = '';
+                    fetch(REVIEW_FORM_URL, {
+                            method: 'POST',
+                            body: JSON.stringify(data),
+                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+                        })
+                        .then(response => {
+                            if (response.ok) return response.json();
+                            throw new Error('Network response was not ok.');
+                        })
+                        .then(() => {
+                            formStatus.className = 'form-status success';
+                            formStatus.textContent = '✅ Thank you! Your review has been submitted.';
+                            form.reset();
+                            setTimeout(() => {
+                                closeModal();
+                                formStatus.className = 'form-status';
+                                formStatus.textContent = '';
+                            }, 2000);
+                        })
+                        .catch(() => {
+                            formStatus.className = 'form-status error';
+                            formStatus.textContent = '❌ Oops! Something went wrong. Please try again.';
+                        })
+                        .finally(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Submit Review';
+                        });
+                });
+            }
+
+            // ─── CONTACT FORM ───
+            function initContactForm() {
+                const form = document.getElementById('contactForm');
+                if (!form) return;
+                const CONTACT_FORM_URL = 'https://formspree.io/f/xaqgjdrl';
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const btn = this.querySelector('.btn-submit');
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Sending...';
+                    btn.disabled = true;
+                    const data = {
+                        name: document.getElementById('contactName').value,
+                        email: document.getElementById('contactEmail').value,
+                        message: document.getElementById('contactMessage').value
+                    };
+                    fetch(CONTACT_FORM_URL, {
+                            method: 'POST',
+                            body: JSON.stringify(data),
+                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                alert('✅ Thank you! Your message has been sent.');
+                                form.reset();
+                            } else {
+                                throw new Error('Network response was not ok.');
+                            }
+                        })
+                        .catch(() => {
+                            alert('❌ Oops! Something went wrong. Please try again.');
+                        })
+                        .finally(() => {
+                            btn.textContent = originalText;
+                            btn.disabled = false;
+                        });
+                });
+            }
+
+            // ─── INIT ───
+            document.addEventListener('DOMContentLoaded', function() {
+                renderProducts();
+                buildCarousel();
+                initHamburger();
+                initReviews();
+                initReviewModal();
+                initContactForm();
+
+                if (window.location.hash && window.location.hash.startsWith('#product-')) {
+                    const id = window.location.hash.replace('#product-', '');
+                    const index = products.findIndex(p => p.id === id);
+                    if (index > -1) {
+                        setTimeout(() => openCarousel(index), 500);
+                    }
+                }
+
+                console.log('✅ Aima\'s Digital Store – Review cards now loop like a train!');
+            });
+
+        })();
+    </script>
+
+</body>
+</html>
